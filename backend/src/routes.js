@@ -1,3 +1,5 @@
+// Todas as rotas utilizadas no sistema e a referenciação a suas respectivas Controllers
+
 const express = require('express');
 
 const OngController = require('./controllers/OngController');

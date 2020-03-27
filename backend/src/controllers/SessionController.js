@@ -1,6 +1,7 @@
 const connection = require('../database/connection');
 
 module.exports = {
+    // Valida se o usuário existe no BD para realizar o login no sistema
     async create(request, response){
         const { id } = request.body;
 
