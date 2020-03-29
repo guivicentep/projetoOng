@@ -1,8 +1,9 @@
 // Constante de conexão com o banco
 const connection = require('../database/connection');
 
-// Constante que traz o crypto, que gera o ID randômico de uma ONG
-const crypto = require('crypto'); 
+const generateUniqueId = require('../utils/generateUniqueId');
+
+
 
 module.exports = {
     async index(request, response) {
@@ -22,7 +23,7 @@ module.exports = {
 
 
         // Cria um código aleatório para cada ONG
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateUniqueId();
         
         // Aguarda a conexão com ongs, e depois realiza o insert
         await connection('ongs').insert({
